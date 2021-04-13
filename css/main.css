@@ -64,7 +64,7 @@
       height: 25vw;
       border-radius: 50%;
       border: 5px solid #00d1b5;
-      background: url(/img/portrait.png) center/cover no-repeat; }
+      background: url(./img/portrait.png) center/cover no-repeat; }
   .menu .nav-item {
     margin-left: 15%;
     transform: translate3d(1000px, 0, 0);
@@ -110,7 +110,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url(/img/background.jpg);
+    background: url(./img/background.jpg);
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img::after {
