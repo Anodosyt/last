@@ -1,0 +1,211 @@
+@import "config";
+@import "menu";
+
+body {
+  @include background;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+//Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  min-height: 100vh;
+  .icons {
+    margin-top: 1rem;
+    a {
+      padding: 0.4rem;
+      color: set-text-color($primary-color);
+
+      &:hover {
+        color: $secondary-color;
+        @include easeout();
+      }
+    }
+  }
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
+    }
+  }
+}
+
+.bio {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bio-portrait bio-text bio-text"
+    "job-1 job-2 job-3";
+  grid-template-columns: repeat(3, 1fr);
+}
+.bio-portrait {
+  grid-area: bio-portrait;
+  margin: auto;
+  border-radius: 50%;
+  border: 5px solid $secondary-color;
+  width: 25vh;
+}
+.bio-text {
+  grid-area: bio-text;
+  font-size: 1.5rem;
+}
+.job-1 {
+  grid-area: job-1;
+}
+.job-2 {
+  grid-area: job-2;
+}
+.job-3 {
+  grid-area: job-3;
+}
+.job {
+  background: lighten($primary-color, 10%);
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 5px solid $secondary-color;
+  h3 {
+    cursor: pointer;
+    font-weight: bold;
+    background: linear-gradient(
+      to right,
+      $secondary-color,
+      $secondary-color 50%,
+      set-text-color($primary-color) 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 500ms ease-in-out;
+    &:hover {
+      background-position: 0%;
+    }
+  }
+  p {
+    text-align: justify;
+  }
+}
+
+//work and projects
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  .tint {
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0.365rem;
+      left: 0;
+      right: 0;
+      background: darken(rgba($secondary-color, 0.5), 20%);
+      transition: all 0.3s linear;
+      z-index: 1;
+      border-radius: 5%;
+    }
+    &:hover::before {
+      background: none;
+    }
+  }
+  img {
+    border-radius: 5%;
+    width: 100%;
+  }
+}
+//buttons
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: none;
+
+  margin-bottom: 0.3rem;
+  &:hover {
+    @include easeout;
+    background: rgba($secondary-color, 1);
+    color: set-text-color(rgba($secondary-color, 1));
+  }
+}
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 5);
+  color: white;
+}
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 25);
+  color: #000;
+}
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 4rem;
+
+  div {
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 1.5rem 2.5rem;
+    border: 2px solid set-text-color($primary-color);
+    margin-bottom: 1rem;
+    @include easeout;
+    &:hover {
+      padding: 1rem 2rem;
+      background-color: rgba($secondary-color, 1);
+      color: set-text-color(rgba($secondary-color, 1));
+      span {
+        color: set-text-color(rgba($secondary-color, 1));
+      }
+    }
+  }
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: lighten($primary-color, 10%);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+@import "mobile";

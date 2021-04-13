@@ -1,0 +1,149 @@
+//Widescreens
+@include mediaXL {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+//Laptops
+@include mediaLg {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Tablets
+@include mediaMd {
+  h1,
+  h2,
+  h3 {
+    &.lg-heading {
+      position: absolute;
+      top: 5vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      font-size: 12vh !important;
+      &.about-heading {
+        position: relative;
+        font-size: 5rem !important;
+      }
+    }
+    &.sm-heading {
+      position: absolute;
+      top: 60vh;
+      width: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 5vh;
+      &.about-heading {
+        position: relative;
+        font-size: 2rem !important;
+        display: block;
+        top: 5vh;
+      }
+    }
+  }
+  main {
+    align-items: center;
+    text-align: center;
+
+    .icons {
+      position: absolute;
+      width: 90%;
+      bottom: 30px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4vh;
+    }
+    .bio {
+      grid-template-areas:
+        "bio-portrait"
+        "bio-text"
+        "job-1"
+        "job-2"
+        "job-3";
+      grid-template-columns: 1fr;
+    }
+  }
+  ul.menu-nav,
+  div.menu-branding {
+    width: 100%;
+    float: none;
+  }
+  div.menu-branding {
+    height: 35vh;
+    transform: translate3d(-100%, 0, 0);
+
+    .portrait {
+      width: 25vh;
+      height: 25vh;
+    }
+  }
+  ul.menu-nav {
+    align-items: center;
+    height: 65vh;
+    transform: translate3d(100%, 0, 0);
+    .nav-item {
+      margin-left: 0;
+      margin-bottom: 2vh;
+      a {
+        font-size: 4.5vh !important;
+      }
+    }
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Mobiles
+@include mediaSm {
+  h1,
+  h2,
+  h3 {
+    &.lg-heading {
+      font-size: 10vh !important;
+      position: absolute;
+      top: 5vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      &.about-heading {
+        font-size: 2rem !important;
+      }
+    }
+    &.sm-heading {
+      position: absolute;
+
+      width: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3vh;
+      &.about-heading {
+        font-size: 1rem !important;
+        top: 6vh;
+      }
+    }
+  }
+  main {
+    .icons {
+      position: absolute;
+      width: 90%;
+      bottom: 30px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.8vh;
+    }
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    div {
+      font-size: 1.5rem;
+      padding: 1rem 1.5rem;
+    }
+  }
+}
